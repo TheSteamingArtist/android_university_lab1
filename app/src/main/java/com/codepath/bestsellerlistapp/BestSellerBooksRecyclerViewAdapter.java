@@ -1,5 +1,6 @@
 package com.codepath.bestsellerlistapp;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +8,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.codepath.bestsellerlistapp.models.BestSellerBook;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -20,7 +24,11 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
     private final List<BestSellerBook> books;
     private final OnListFragmentInteractionListener mListener;
 
-    public BestSellerBooksRecyclerViewAdapter(List<BestSellerBook> items, OnListFragmentInteractionListener listener) {
+    Context context;
+
+    public BestSellerBooksRecyclerViewAdapter(List<BestSellerBook> items, OnListFragmentInteractionListener listener)
+    {
+        this.context = context;
         books = items;
         mListener = listener;
     }
